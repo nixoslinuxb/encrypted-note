@@ -1,5 +1,7 @@
 # Encrypted Note
 
+[![CI](https://github.com/nixoslinuxb/encrypted-note/actions/workflows/ci.yml/badge.svg)](https://github.com/nixoslinuxb/encrypted-note/actions/workflows/ci.yml)
+
 A native, Obsidian-like markdown note-taking app written in Rust, with
 **AES-256 encryption** for everything it stores. It is **Wayland-only** — it
 refuses to start under X11 or XWayland — and targets Arch Linux.
@@ -530,4 +532,4 @@ checking the `ext-data-control` bridge on a compositor.
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
