@@ -1,0 +1,56 @@
+[package]
+name = "encrypted-note"
+version = "0.1.0"
+edition = "2021"
+description = "Encrypted Note — a native, Wayland-friendly, Obsidian-like markdown note taking app with AES-256 encryption"
+license = "MIT"
+readme = "README.md"
+
+[[bin]]
+name = "encrypted-note"
+path = "src/main.rs"
+
+[dependencies]
+eframe = { version = "0.27", default-features = false, features = [
+    "default_fonts",
+    "wgpu",
+    "wayland",
+] }
+egui = "0.27"
+egui_extras = { version = "0.27", default-features = false, features = ["svg"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+regex = "1"
+resvg = "0.37"
+roxmltree = "0.19"
+# Raster image decoding for note attachments (png/jpeg/gif/bmp).
+image = { version = "0.24", default-features = false, features = [
+    "png",
+    "jpeg",
+    "gif",
+    "bmp",
+    "ico",
+] }
+# System clipboard on KDE/KWin via the ext-data-control protocol (see
+# src/system_clipboard.rs).
+wayland-client = "0.31"
+wayland-protocols = { version = "0.32", features = ["client", "staging"] }
+# Vendored (patched) egui-winit: exposes a hook for an external clipboard.
+egui-winit = { version = "0.27", default-features = false }
+
+# Cryptography: AES-256-GCM for data, Argon2id for password-based key
+# derivation, getrandom for salts/nonces.
+aes-gcm = { version = "0.10.3", default-features = false, features = ["aes", "alloc"] }
+argon2 = { version = "0.5.3", default-features = false, features = ["alloc"] }
+getrandom = "0.3"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true
+
+# egui-winit uses smithay-clipboard (wlr-data-control) on Wayland, which KWin
+# does not implement (it uses ext-data-control), so paste silently failed. This
+# patched copy falls back to an in-app clipboard instead of returning nothing.
+[patch.crates-io]
+egui-winit = { path = "vendor/egui-winit" }

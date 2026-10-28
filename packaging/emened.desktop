@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Emened
+GenericName=Markdown Notes
+Comment=A native, Obsidian-like markdown note taking app
+Exec=emened %F
+Terminal=false
+Categories=Office;TextEditor;
+Keywords=notes;markdown;obsidian;wiki;
+StartupNotify=true
+StartupWMClass=emened

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Encrypted Note
+GenericName=Encrypted Markdown Notes
+Comment=A native, Obsidian-like markdown note taking app with AES-256 encryption
+Exec=encrypted-note %F
+Icon=encrypted-note
+Terminal=false
+Categories=Office;TextEditor;Security;
+Keywords=notes;markdown;encrypted;aes;obsidian;wiki;
+StartupNotify=true
+StartupWMClass=encrypted-note

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="tile" x1="24" y1="16" x2="232" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa"/>
+      <stop offset="0.55" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#5b21b6"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="96" y1="56" x2="168" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ece7ff"/>
+    </linearGradient>
+    <linearGradient id="lock" x1="138" y1="150" x2="196" y2="212" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#241b45"/>
+      <stop offset="1" stop-color="#120c2b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- app tile -->
+  <rect x="8" y="8" width="240" height="240" rx="58" fill="url(#tile)"/>
+  <rect x="8" y="8" width="240" height="240" rx="58" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+
+  <!-- document -->
+  <path d="M84 56h72l36 36v72a18 18 0 0 1-18 18H84a18 18 0 0 1-18-18V74a18 18 0 0 1 18-18z" fill="url(#paper)"/>
+  <!-- folded corner -->
+  <path d="M156 56l36 36h-30a6 6 0 0 1-6-6z" fill="#c4b5fd"/>
+  <!-- text lines -->
+  <rect x="92" y="106" width="76" height="11" rx="5.5" fill="#7c3aed" fill-opacity="0.85"/>
+  <rect x="92" y="128" width="58" height="11" rx="5.5" fill="#7c3aed" fill-opacity="0.55"/>
+  <rect x="92" y="150" width="40" height="11" rx="5.5" fill="#7c3aed" fill-opacity="0.35"/>
+
+  <!-- lock badge -->
+  <circle cx="168" cy="180" r="40" fill="url(#lock)"/>
+  <circle cx="168" cy="180" r="40" fill="none" stroke="#a78bfa" stroke-opacity="0.55" stroke-width="3"/>
+  <rect x="150" y="176" width="36" height="26" rx="7" fill="#e9e3ff"/>
+  <path d="M158 176v-6a10 10 0 0 1 20 0v6" fill="none" stroke="#e9e3ff" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="168" cy="188" r="3.5" fill="#5b21b6"/>
+</svg>
